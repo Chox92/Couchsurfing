@@ -7,7 +7,7 @@ package isw_pr;
 
 /**
  *
- * @author gimir_000
+ * @author Gruppo 12
  */
 public class Isw_pr {
 
