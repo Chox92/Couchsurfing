@@ -15,9 +15,9 @@ public class Dashboard {
         return new GestioneLetto();
     }
     
-    public RicercaLetto openRicercaLetto(){
+    /*public RicercaLetto openRicercaLetto(){
         return new RicercaLetto();
-    }
+    }*/
     public void logout(){
         //dovrà chiudere tutto
     }
