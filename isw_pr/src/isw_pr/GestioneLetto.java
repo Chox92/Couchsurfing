@@ -17,10 +17,11 @@ public class GestioneLetto {
    public GestioneLetto(){
    }
    
-   public void creaLetto(String nomeLetto){
+   public void creaLetto(String nomeLetto, String loc){
        if (n < 9){
         model[n] = new Letto();
         model[n].setLetto(nomeLetto);
+        model[n].setLocation(loc);
         model[n].setDisp_letto("1");
         n++;
        }else{
@@ -30,8 +31,7 @@ public class GestioneLetto {
 
    public void printListaLetti(){
        for( int i=0; i<n;i++){
-           System.out.println( i+1 + "--> Nome: " + model[i].getLetto() + 
-                   "; Disponibilita': " + model[i].getDisp_letto() + ";");
+           System.out.println( i+1 + "--> Nome: " + model[i].getLetto() + "; Disponibilita': " + model[i].getDisp_letto() + ";" + "; Localita': " + model[i].getLocation() + ";");
            System.out.println();
        }
    }

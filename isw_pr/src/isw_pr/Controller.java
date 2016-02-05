@@ -25,8 +25,10 @@ public  class Controller {
       
 
       GestioneLetto controller = new GestioneLetto();
-      controller.creaLetto("");
+      controller.creaLetto("letto1","colombia");
+      controller.creaLetto("letto2","colombia");
       
+      controller.printListaLetti();
       /*controller.updateView();
 
       //update model data
