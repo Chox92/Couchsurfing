@@ -27,6 +27,11 @@ public  class Controller {
       GestioneLetto controller = new GestioneLetto();
       controller.creaLetto("letto1","colombia");
       controller.creaLetto("letto2","colombia");
+      controller.creaLetto("letto3","colombia");
+      
+      controller.printListaLetti();
+      
+      controller.rimuoviLetto(1);
       
       controller.printListaLetti();
       /*controller.updateView();
