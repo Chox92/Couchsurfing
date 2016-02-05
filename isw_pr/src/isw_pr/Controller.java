@@ -25,7 +25,7 @@ public  class Controller {
       
 
       GestioneLetto controller = new GestioneLetto();
-      controller.creaLetto("lamadonnaèstronza");
+      controller.creaLetto("");
       
       /*controller.updateView();
 
