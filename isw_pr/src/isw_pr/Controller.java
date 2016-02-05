@@ -1,12 +1,14 @@
 package isw_pr;
 
-/*seleziona cosa dovrà caricare model*/
+<<<<<<< HEAD
+/*seleziona cosa dovbrà cariicare model*/
 
 /**
  *
  * @author Francesco
  */
-
+=======
+>>>>>>> origin/master
 public  class Controller {
 
     /**
