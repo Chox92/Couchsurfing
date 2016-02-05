@@ -40,9 +40,14 @@ public  class Controller {
       student.setLetto("un letto");
       student.setDisp_letto("0");
       return student;
-   
-   
     }
+   
+   public final Letto[] findLettoDB(String luogo, String disp){
+        //simula la ricerca di lettin del database
+        return null;
+        
+    }
+   
     private String getFromDB(String key, int val){
         //simula il recupero dal database
         return "";
