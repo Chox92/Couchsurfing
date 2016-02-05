@@ -9,6 +9,6 @@ package isw_pr;
  *
  * @author Giovanni
  */
-public class Model {
+public class Dashboard {
     
 }

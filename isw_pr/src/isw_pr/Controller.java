@@ -1,14 +1,14 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package isw_pr;
-
-<<<<<<< HEAD
-/*seleziona cosa dovbrà cariicare model*/
 
 /**
  *
- * @author Francesco
+ * @author gimir_000
  */
-=======
->>>>>>> origin/master
 public  class Controller {
 
     /**
@@ -25,7 +25,7 @@ public  class Controller {
       
 
       GestioneLetto controller = new GestioneLetto();
-      controller.creaLetto("lamadonnaèstronza","inferno");
+      controller.creaLetto("lamadonnaèstronza");
       
       /*controller.updateView();
 
@@ -43,13 +43,6 @@ public  class Controller {
    
    
     }
-   
-    public final Letto[] findLettoDB(String luogo, String disp){
-        //simula la ricerca di lettin del database
-        return null;
-        
-    }
-   
     private String getFromDB(String key, int val){
         //simula il recupero dal database
         return "";
