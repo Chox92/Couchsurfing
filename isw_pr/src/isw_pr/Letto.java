@@ -12,6 +12,7 @@ package isw_pr;
 public class Letto {
    private String letto;
    private String disp_letto; //NAME
+   private String location;
    
    public String getLetto() {
       return letto;
@@ -27,5 +28,13 @@ public class Letto {
    
    public void setDisp_letto(String disp_letto) {
       this.disp_letto = disp_letto;
+   }
+   
+   public String getLocation() {
+      return location;
+   }
+   
+   public void setLocation(String location) {
+      this.location = location;
    }
 }
