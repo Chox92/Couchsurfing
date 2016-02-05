@@ -18,5 +18,10 @@ public class RicercaLetto {
         lista = controller.findLettoDB(luogo, disp);
     };
     
-    
+    private void ordina(String ordine){
+        //ordina la lista
+    }
+    public Letto getLetto(int i){
+        return lista[i];
+    }
 }
