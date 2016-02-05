@@ -36,5 +36,8 @@ public class Letto {
    
    public void setLocation(String location) {
       this.location = location;
+      
    }
+   
+   /*LETTO FA RIMA CON TETTO*/
 }
