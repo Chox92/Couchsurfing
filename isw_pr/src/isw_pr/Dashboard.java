@@ -11,4 +11,15 @@ package isw_pr;
  */
 public class Dashboard {
     
+    public GestioneLetto openGestioneLetto(){
+        return new GestioneLetto();
+    }
+    
+    public RicercaLetto openRicercaLetto(){
+        return new RicercaLetto();
+    }
+    public void logout(){
+        //dovrà chiudere tutto
+    }
+    
 }

@@ -10,5 +10,13 @@ package isw_pr;
  * @author Giovanni
  */
 public class RicercaLetto {
+    private Letto[] lista;
+    private Controller controller;
+    
+    public RicercaLetto(String luogo, String disp, Controller c){
+        controller = c;
+        lista = controller.findLettoDB(luogo, disp);
+    };
+    
     
 }
