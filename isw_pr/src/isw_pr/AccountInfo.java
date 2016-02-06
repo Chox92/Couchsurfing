@@ -9,10 +9,12 @@ package isw_pr;
  *
  * @author Giovanni
  */
-public class AccountInfo {
+public class AccountInfo extends CreateNewAccount{
     private String userId;
     private String psw;
     
+    
+    public AccountInfo(){};    
     
     public AccountInfo(String usrID,String passw){
         userId = usrID;

@@ -18,6 +18,9 @@ public  class Controller {
     {
         // TODO code application logic here
         
+        AccountInfo account1 = new AccountInfo();
+        account1.createAccount("Ingegneria", "Software");
+        
     //fetch student record based on his roll no from the database
       Letto model  = prendi_dati_Letto_Dal_Database_finto();/*emula il db*/
 
@@ -50,7 +53,7 @@ public  class Controller {
     }
    
    public final Letto[] findLettoDB(String luogo, String disp){
-        //simula la ricerca di lettin del database
+        //simula la ricerca di letto in del database
         return null;
         
     }
