@@ -11,8 +11,8 @@ package isw_pr;
  */
 public class Dashboard {
     
-    public GestioneLetto openGestioneLetto(){
-        return new GestioneLetto();
+    public GestioneLetto openGestioneLetto(){   //istanzia la classe Gestione letto
+        return new GestioneLetto();             //stavo seguendo la struttura del diagramma delle classi
     }
     
     /*public RicercaLetto openRicercaLetto(){

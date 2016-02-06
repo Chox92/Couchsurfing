@@ -10,19 +10,19 @@ package isw_pr;
  * @author Giovanni
  */
 public class Login {
-    private String user;
-    private String pass;
-    private AccountInfo dati;
+    private String user;        //nome da verificare
+    private String pass;        //password da verificare
+    private AccountInfo dati;   //dati account recuperati da database
     
-    public Login(String usr, String psw, AccountInfo match){
-        user = usr;
-        pass = psw;
-        dati = match;
+    public Login(String usr, String psw, AccountInfo match){    //alla creazione
+        user = usr;     //verrà inizializzata da chi avrà recuperato i dati dal database
+        pass = psw;     //o accede questa stessa al database?
+        dati = match;   //io pensavo di mettere tutti gli accessi al DB nel controller e far partire le cose da li
     }
     
-    private void securityMatch(){
+    private void securityMatch(){ //verifica fasulla dell'account per il login
         if(true)/*(dati.getUsername() == user && dati.getPsw() == pass)*/{
-            login();
+            login(); //effettua il login e ridirige alla dashboard
         }else{
             System.out.println("Nome utente o Password errati");
         }
