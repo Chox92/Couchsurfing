@@ -20,7 +20,7 @@ public class Login {
         dati = match;   //io pensavo di mettere tutti gli accessi al DB nel controller e far partire le cose da li
     }
     
-    private void securityMatch(){ //verifica fasulla dell'account per il login
+    public void securityMatch(){ //verifica fasulla dell'account per il login
         if(true)/*(dati.getUsername() == user && dati.getPsw() == pass)*/{
             login(); //effettua il login e ridirige alla dashboard
         }else{

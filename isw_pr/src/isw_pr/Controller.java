@@ -18,8 +18,16 @@ public  class Controller {
     {
         // TODO code application logic here
         
-        AccountInfo account1 = new AccountInfo();
-        account1.createAccount("Ingegneria", "Software");
+        /*AccountInfo account1 = new AccountInfo();   //così salti passaggi
+        account1.createAccount("Ingegneria", "Software");*/
+        
+        CreateNewAccount nuovo = new CreateNewAccount();
+        nuovo.createAccount("Ingegneria", "Software");
+        AccountInfo account1 = nuovo.getAccount();
+        //ora ci andrebbe
+        Login login = new Login("Ingegneria", "Software", account1);
+        login.securityMatch();
+        //e in teoria così dovrebbe lanciare la dashboard
         
     //fetch student record based on his roll no from the database
       Letto model  = prendi_dati_Letto_Dal_Database_finto();/*emula il db*/

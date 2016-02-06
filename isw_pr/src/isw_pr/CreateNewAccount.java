@@ -10,14 +10,16 @@ package isw_pr;
  * @author Giovanni
  */
 public class CreateNewAccount {
+    private AccountInfo nuovo;
     
-    
-    public void createAccount(String userID, String password){
-        AccountInfo nuovo = new AccountInfo("","");
+    public void createAccount(String userID, String password){  //non serve estendere account info
+        nuovo = new AccountInfo("","");             //basta aggiungere una funzione qua
         nuovo.setUsername(userID);
-        nuovo.setPsw(password);
-        
+        nuovo.setPsw(password);    
     }
     
+    public AccountInfo getAccount(){        //per restituire l'account
+        return nuovo;                       //
+    }
     
 }
