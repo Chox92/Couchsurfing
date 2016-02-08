@@ -16,11 +16,11 @@ public class CreateAccountGUI  {
   
     
     
-    public void  accountgui (String usr,String psw )
+    public String[]  accountgui (String usr,String psw )
     {
         
     
-     //  var_tmp_read[2]; ///meglio un vettore
+    
         String[] var_tmp_read = new String[2];
  
         int var_int=0;
@@ -36,7 +36,7 @@ public class CreateAccountGUI  {
         System.out.println("imputtami la psw \n");
         var_tmp_read[1]= leggi.nextLine();
         
-        
+        return var_tmp_read;//ritorna il vettore
    
          }
     

@@ -50,11 +50,18 @@ public  class Controller  {
         
         
        
+        String[] tmp_di_passaggio = new String[2]; //un po molto brutto
         
         CreateAccountGUI ui_account_create = new CreateAccountGUI();
         
          
-        ui_account_create.accountgui("","");
+        
+        tmp_di_passaggio= ui_account_create.accountgui("","");
+        
+        
+         // System.out.println("user ritorno:"+tmp_di_passaggio[0]+"psw user ritorno:"+tmp_di_passaggio[1]);
+        
+        
          
         
        
