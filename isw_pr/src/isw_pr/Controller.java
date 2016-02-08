@@ -4,25 +4,65 @@
  * and open the template in the editor.EEEEEEE
  */
 package isw_pr;
+import java.util.*;
+
 
 /**
  *
  * @author gimir_000
  */
-public  class Controller {
+public  class Controller  {
 
+    
+    
+
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args)
     {
-        // TODO code application logic here
         
+        CreateNewAccount nuovo = new CreateNewAccount();
+        
+        /*
+        String var_tmp_read,var_tmp_read2; ///meglio un vettore
+        int var_int=0;
+        System.out.println("ciao we benvenuto \n imputtami l'user \n");
+        System.out.println("-1 per fare login \n -2 per creare un nuovo account");
+        
+        Scanner leggi= new Scanner( System.in );
+        var_tmp_read= leggi.nextLine();
+        System.out.println("imputtami la psw \n");
+        var_tmp_read2= leggi.nextLine();
+        
+         System.out.println("Le Tue Credenziali Di Accesso Sono:\n user:"+var_tmp_read+"\n"+"psw:"+var_tmp_read2);
+         
+         System.out.println("premi uno per confermare e loggarti");//da cambiare in un controllo della stringa
+         var_int= leggi.nextInt();
+         System.out.println("hai pigiato:"+var_int);
+         */
+       
+       
         /*AccountInfo account1 = new AccountInfo();   //così salti passaggi
         account1.createAccount("Ingegneria", "Software");*/
         
-        CreateNewAccount nuovo = new CreateNewAccount();
+        
+        
+       
+        
+        CreateAccountGUI ui_account_create = new CreateAccountGUI();
+        
+         
+        ui_account_create.accountgui("","");
+         
+        
+       
+         
+         
         nuovo.createAccount("Ingegneria", "Software");
+        
+       
         AccountInfo account1 = nuovo.getAccount();
         //ora ci andrebbe
         Login login = new Login("Ingegneria", "Software", account1);

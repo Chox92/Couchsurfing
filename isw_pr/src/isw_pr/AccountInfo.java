@@ -35,4 +35,9 @@ public class AccountInfo {
     public void setPsw(String passw){       //imposta password
         psw = passw;
     }
+    
+   @Override
+    public String toString() {
+        return "dati [usr=" + userId + ", age=" + psw + "]";
+    }
 }
