@@ -16,7 +16,7 @@ public class Dashboard {
     }
     
     public RicercaLetto openRicercaLetto(String luogo, String disp, Controller c){
-        return new RicercaLetto(luogo, disp, c);
+        return new RicercaLetto(luogo,  c);
     }
     public void logout(){
         //dovrà chiudere tutto
