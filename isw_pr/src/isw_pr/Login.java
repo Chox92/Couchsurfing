@@ -30,7 +30,7 @@ public class Login {
     }
     
     private void login(){
-        //lancia la dashboard
+        //lancia la dashboard nn
         System.out.println("******************* dati verificati ******************");
     }
 }
