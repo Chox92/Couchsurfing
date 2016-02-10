@@ -99,7 +99,7 @@ public  class Controller  {
             case 1 : 
                 manager = dash.openGestioneLetto();
                 break;
-            case 2 : 
+            case 2 :
                 find = dash.openRicercaLetto(vistadash.search(), new Controller());
         }
           
@@ -141,6 +141,7 @@ public  class Controller  {
         Letto[] arr = new Letto[7];
         
         for(int i = 0; i < 7; i++){
+            arr[i]=new Letto();
             arr[i].setLocation(luogo);
             arr[i].setLetto("Da Pedro"+ i+1);
             arr[i].setDisp_letto("1");
