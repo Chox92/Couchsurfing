@@ -18,11 +18,25 @@ public  class Controller  {
     
     public static void main(String[] args)
     {
+        String[] tmp_di_passaggio = new String[2]; //un po' molto brutto
+        AccountInfo account1 = new AccountInfo("", "");
+        
         View view = new View();
         if (view.homePage() == 1){
-            //
+            
+            CreateNewAccount nuovo = new CreateNewAccount();
+            
+            
+        
+            CreateAccountGUI ui_account_create = new CreateAccountGUI();
+
+            tmp_di_passaggio = ui_account_create.accountgui("","");
+
+            nuovo.createAccount(tmp_di_passaggio[0], tmp_di_passaggio[1]);
+
+            account1 = nuovo.getAccount();
         };
-        CreateNewAccount nuovo = new CreateNewAccount();
+        
         
         /*
         String var_tmp_read,var_tmp_read2; ///meglio un vettore
@@ -47,19 +61,8 @@ public  class Controller  {
         account1.createAccount("Ingegneria", "Software");*/
         
         
-        String[] tmp_di_passaggio = new String[2]; //un po molto brutto
-        
-        CreateAccountGUI ui_account_create = new CreateAccountGUI();
-        
-        tmp_di_passaggio= ui_account_create.accountgui("","");
-        
-        
-         // System.out.println("user ritorno:"+tmp_di_passaggio[0]+"psw user ritorno:"+tmp_di_passaggio[1]);
-        
-             
-        nuovo.createAccount(tmp_di_passaggio[0], tmp_di_passaggio[1]);
-        
-        AccountInfo account1 = nuovo.getAccount();
+        //System.out.println("user ritorno:"+tmp_di_passaggio[0]+"psw user ritorno:"+tmp_di_passaggio[1]);
+
         
         
         LoginGUI lgin_vista =new LoginGUI();
