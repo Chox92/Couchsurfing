@@ -91,6 +91,8 @@ public  class Controller  {
           DashboardGUI vistadash = new DashboardGUI();
           vistadash.dashGui();
           
+        
+          
           
         //e in teoria così dovrebbe lanciare la dashboard
         
