@@ -13,6 +13,29 @@ import java.util.Scanner;
  */
 public class DashboardGUI {
     
+    public int dashGui()
+    {
     
-  
+       
+ 
+        int var_tmp_read;
+        
+        System.out.println("**SEI IN DASHBOARD**\n");
+        
+       
+        System.out.println("scelta 1\n scelta 2 \n scleta 3");
+        
+        
+        Scanner leggi= new Scanner( System.in );
+        var_tmp_read= leggi.nextInt();
+        
+        
+        return var_tmp_read;
+       
+       
+    
+   }
+            
+            
+            
 }

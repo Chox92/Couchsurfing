@@ -88,18 +88,10 @@ public  class Controller  {
         }while (var_state_login<1);
         
         
-        
-        
-
-        
-       
-        //ora ci andrebbe   h
-        Login login = new Login(usrPassArray[0],usrPassArray[1] , account1);
-        login.securityMatch();
-
-        
-        
-        
+          DashboardGUI vistadash = new DashboardGUI();
+          vistadash.dashGui();
+          
+          
         //e in teoria così dovrebbe lanciare la dashboard
         
         //fetch student record based on his roll no from the database

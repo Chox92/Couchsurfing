@@ -24,4 +24,9 @@ public class View {
         Scanner scelta = new Scanner(System.in);
         return scelta.nextInt();
     }
+    
+    
+    
+    
+    
 }
