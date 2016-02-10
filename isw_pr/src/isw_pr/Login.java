@@ -22,9 +22,6 @@ public class Login {
     }
     
     public int securityMatch(){ //verifica fasulla dell'account per il login
-       
-        
-        
         
         if(dati.getUsername().equals(user) && dati.getPsw().equals(pass) ){
           
@@ -35,7 +32,6 @@ public class Login {
             
                var_state=0;
         }
-        
         return var_state;
         
     }
