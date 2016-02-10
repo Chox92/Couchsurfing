@@ -12,15 +12,9 @@ import java.util.Scanner;
  * @author Giovanni
  */
 public class CreateAccountGUI  {
-
-  
-    
     
     public String[]  accountgui (String usr,String psw )
     {
-        
-    
-    
         String[] var_tmp_read = new String[2];
  
         int var_int=0;
@@ -37,12 +31,5 @@ public class CreateAccountGUI  {
         var_tmp_read[1]= leggi.nextLine();
         
         return var_tmp_read;//ritorna il vettore
-   
-         }
-    
-
-
-    
- 
-    
+    }
 }

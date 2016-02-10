@@ -6,20 +6,16 @@
 package isw_pr;
 import java.util.*;
 
-
 /**
  *
  * @author gimir_000
  */
 public  class Controller  {
-
-    
-    
-
     
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args)
     {
         
@@ -48,13 +44,9 @@ public  class Controller  {
         account1.createAccount("Ingegneria", "Software");*/
         
         
-        
-       
         String[] tmp_di_passaggio = new String[2]; //un po molto brutto
         
         CreateAccountGUI ui_account_create = new CreateAccountGUI();
-        
-         
         
         tmp_di_passaggio= ui_account_create.accountgui("","");
         
@@ -62,49 +54,43 @@ public  class Controller  {
          // System.out.println("user ritorno:"+tmp_di_passaggio[0]+"psw user ritorno:"+tmp_di_passaggio[1]);
         
         
-         
-        
-       
-         
-         
         nuovo.createAccount("Ingegneria", "Software");
         
-       
         AccountInfo account1 = nuovo.getAccount();
         //ora ci andrebbe
         Login login = new Login("Ingegneria", "Software", account1);
         login.securityMatch();
         //e in teoria così dovrebbe lanciare la dashboard
         
-    //fetch student record based on his roll no from the database
-      Letto model  = prendi_dati_Letto_Dal_Database_finto();/*emula il db*/
+        //fetch student record based on his roll no from the database
+        Letto model  = prendi_dati_Letto_Dal_Database_finto();/*emula il db*/
 
-      //Create a view : to write student details on console
+        //Create a view : to write student details on console
       
 
-      GestioneLetto controller = new GestioneLetto();
-      controller.creaLetto("letto1","colombia");
-      controller.creaLetto("letto2","colombia");
-      controller.creaLetto("letto3","colombia");
-      
-      controller.printListaLetti();
-      
-      controller.rimuoviLetto(1);
-      
-      controller.printListaLetti();
-      /*controller.updateView();
+        GestioneLetto controller = new GestioneLetto();
+        controller.creaLetto("letto1","colombia");
+        controller.creaLetto("letto2","colombia");
+        controller.creaLetto("letto3","colombia");
 
-      //update model data
-      controller.setDisp_letto("ALTRO LETTO uououou");
+        controller.printListaLetti();
 
-      controller.updateView();*/
+        controller.rimuoviLetto(1);
+
+        controller.printListaLetti();
+        /*controller.updateView();
+
+        //update model data
+        controller.setDisp_letto("ALTRO LETTO uououou");
+
+        controller.updateView();*/
    }
 
    private static Letto prendi_dati_Letto_Dal_Database_finto(){
-      Letto student = new Letto();
-      student.setLetto("un letto");
-      student.setDisp_letto("0");
-      return student;
+        Letto student = new Letto();
+        student.setLetto("un letto");
+        student.setDisp_letto("0");
+        return student;
     }
    
    public final Letto[] findLettoDB(String luogo, String disp){
@@ -123,6 +109,5 @@ public  class Controller  {
         //e restituisce l'userid temporaneo
         String nome = "";
         return nome;
-    }
-    
+    }    
 }
