@@ -21,8 +21,9 @@ public class Login {
     }
     
     public void securityMatch(){ //verifica fasulla dell'account per il login
-        if(true)/*(dati.getUsername() == user && dati.getPsw() == pass)*/{
+        if(dati.getUsername().equals(user) && dati.getPsw().equals(pass) ){
             login(); //effettua il login e ridirige alla dashboard
+            
         }else{
             System.out.println("Nome utente o Password errati");
         }
@@ -30,5 +31,6 @@ public class Login {
     
     private void login(){
         //lancia la dashboard
+        System.out.println("******************* dati verificati ******************");
     }
 }

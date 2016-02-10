@@ -61,19 +61,28 @@ public  class Controller  {
         
          // System.out.println("user ritorno:"+tmp_di_passaggio[0]+"psw user ritorno:"+tmp_di_passaggio[1]);
         
-        
-         
-        
-       
-         
-         
-        nuovo.createAccount("Ingegneria", "Software");
+             
+        nuovo.createAccount(tmp_di_passaggio[0], tmp_di_passaggio[1]);
         
        
         AccountInfo account1 = nuovo.getAccount();
+        
+        
+        LoginGUI lgin_vista =new LoginGUI();
+         
+        tmp_di_passaggio=lgin_vista.loginGUI("","");
+        
+                
+       // System.out.println("*****DATI DA ACCOUNT USR :"+account1.getUsername().toString()+"*****DATI DA ACCOUNT PSW"+account1.getPsw().toString());
+        
+        
+       
         //ora ci andrebbe
-        Login login = new Login("Ingegneria", "Software", account1);
+        Login login = new Login(tmp_di_passaggio[0],tmp_di_passaggio[1] , account1);
         login.securityMatch();
+        
+        
+        
         //e in teoria così dovrebbe lanciare la dashboard
         
     //fetch student record based on his roll no from the database
