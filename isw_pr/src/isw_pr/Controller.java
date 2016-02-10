@@ -18,8 +18,23 @@ public  class Controller  {
     
     public static void main(String[] args)
     {
+        String[] usrPassArray = new String[2]; //un po' molto brutto
+        AccountInfo account1 = new AccountInfo("", "");
         
-        CreateNewAccount nuovo = new CreateNewAccount();
+        View view = new View();
+        if (view.homePage() == 1){
+            
+            CreateNewAccount accountCreator = new CreateNewAccount();
+        
+            CreateAccountGUI ui_account_create = new CreateAccountGUI();
+
+            usrPassArray = ui_account_create.accountgui("","");
+
+            accountCreator.createAccount(usrPassArray[0], usrPassArray[1]);
+
+            account1 = accountCreator.getAccount();
+        };
+        
         
         /*
         String var_tmp_read,var_tmp_read2; ///meglio un vettore
@@ -44,19 +59,8 @@ public  class Controller  {
         account1.createAccount("Ingegneria", "Software");*/
         
         
-        String[] tmp_di_passaggio = new String[2]; //un po molto brutto
-        
-        CreateAccountGUI ui_account_create = new CreateAccountGUI();
-        
-        tmp_di_passaggio= ui_account_create.accountgui("","");
-        
-        
-         // System.out.println("user ritorno:"+tmp_di_passaggio[0]+"psw user ritorno:"+tmp_di_passaggio[1]);
-        
-             
-        nuovo.createAccount(tmp_di_passaggio[0], tmp_di_passaggio[1]);
-        
-        AccountInfo account1 = nuovo.getAccount();
+        //System.out.println("user ritorno:"+tmp_di_passaggio[0]+"psw user ritorno:"+tmp_di_passaggio[1]);
+
         
         
         LoginGUI lgin_vista =new LoginGUI();
@@ -64,14 +68,15 @@ public  class Controller  {
         
         do{
          
-        tmp_di_passaggio=lgin_vista.loginGUI("","");
+        usrPassArray=lgin_vista.loginGUI("","");
         
                 
       //  System.out.println("*****DATI DA ACCOUNT USR :"+account1.getUsername().toString()+"*****DATI DA ACCOUNT PSW"+account1.getPsw().toString());
         
+
      
         //ora ci andrebbe
-        Login login = new Login(tmp_di_passaggio[0],tmp_di_passaggio[1] , account1);
+        Login login = new Login(usrPassArray[0],usrPassArray[1] , account1);
         
         
         
@@ -85,6 +90,13 @@ public  class Controller  {
         
         
         
+
+        
+       
+        //ora ci andrebbe   h
+        Login login = new Login(usrPassArray[0],usrPassArray[1] , account1);
+        login.securityMatch();
+
         
         
         
@@ -121,10 +133,15 @@ public  class Controller  {
         return student;
     }
    
-   public final Letto[] findLettoDB(String luogo, String disp){
-        //simula la ricerca di letto in del database
-        return null;
+   public final Letto[] findLettoDB(String luogo){
+        Letto[] arr = new Letto[7];
         
+        for(int i = 0; i < 7; i++){
+            arr[i].setLocation(luogo);
+            arr[i].setLetto("Da Pedro"+ i+1);
+            arr[i].setDisp_letto("1");
+        }
+        return arr;
     }
    
     private String getFromDB(String key, int val){

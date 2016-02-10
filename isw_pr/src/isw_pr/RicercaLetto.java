@@ -13,9 +13,9 @@ public class RicercaLetto {
     private Letto[] lista;      //conterrà la lista dei letti che risulta dalla ricerca
     private Controller controller;      //collegamento al controller
     
-    public RicercaLetto(String luogo, String disp, Controller c){ //qui mi sono incasinato e ho messo le funzioni del db 
+    public RicercaLetto(String luogo, Controller c){ //qui mi sono incasinato e ho messo le funzioni del db 
         controller = c;                                           //dal controller a qui perché non riuscivo a capire come altro fare
-        lista = controller.findLettoDB(luogo, disp);        //falsa funzione che cerca nel db e rende la teorica lista
+        lista = controller.findLettoDB(luogo);        //falsa funzione che cerca nel db e rende la teorica lista
     };
     
     private void ordina(String ordine){     
