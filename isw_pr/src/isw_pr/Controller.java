@@ -18,7 +18,10 @@ public  class Controller  {
     
     public static void main(String[] args)
     {
-        
+        View view = new View();
+        if (view.homePage() == 1){
+            //
+        };
         CreateNewAccount nuovo = new CreateNewAccount();
         
         /*

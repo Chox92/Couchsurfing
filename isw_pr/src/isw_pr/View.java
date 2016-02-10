@@ -17,14 +17,11 @@ public class View {
         
         System.out.println("Buongiorno!\n");
         System.out.println("Vuoi effettuare la 1)registrazione o il 2)login?\n");
+    }
+    
+    public int homePage(){
         
         Scanner scelta = new Scanner(System.in);
-        
-        if (scelta.nextInt() == 1){
-            //CreateAccountGUI
-        }
-        else{
-            //LoginGUI
-        }
+        return scelta.nextInt();
     }
 }
