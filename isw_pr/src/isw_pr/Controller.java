@@ -60,17 +60,31 @@ public  class Controller  {
         
         
         LoginGUI lgin_vista =new LoginGUI();
+        int var_state_login=0;
+        
+        do{
          
         tmp_di_passaggio=lgin_vista.loginGUI("","");
         
                 
-       // System.out.println("*****DATI DA ACCOUNT USR :"+account1.getUsername().toString()+"*****DATI DA ACCOUNT PSW"+account1.getPsw().toString());
+      //  System.out.println("*****DATI DA ACCOUNT USR :"+account1.getUsername().toString()+"*****DATI DA ACCOUNT PSW"+account1.getPsw().toString());
         
-        
-       
+     
         //ora ci andrebbe
         Login login = new Login(tmp_di_passaggio[0],tmp_di_passaggio[1] , account1);
-        login.securityMatch();
+        
+        
+        
+        var_state_login= login.securityMatch();
+        
+    
+             
+          
+        }while (var_state_login<1);
+        
+        
+        
+        
         
         
         
