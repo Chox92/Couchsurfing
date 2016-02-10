@@ -36,6 +36,11 @@ public class DashboardGUI {
     
    }
             
-            
+   public String search(){
+       String var;
+       System.out.println("Inserisci la regione di ricerca: ");
+       Scanner leggi= new Scanner( System.in );
+       return var= leggi.nextLine();
+   }         
             
 }
