@@ -89,7 +89,19 @@ public  class Controller  {
         
         
           DashboardGUI vistadash = new DashboardGUI();
-          vistadash.dashGui();
+        
+        int te =vistadash.dashGui();
+        
+        Dashboard dash = new Dashboard();
+        GestioneLetto manager;
+        RicercaLetto find;
+        switch (te){
+            case 1 : 
+                manager = dash.openGestioneLetto();
+                break;
+            case 2 : 
+                find = dash.openRicercaLetto();
+        }
           
           
         //e in teoria così dovrebbe lanciare la dashboard
