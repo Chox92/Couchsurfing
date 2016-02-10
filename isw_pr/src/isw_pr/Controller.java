@@ -98,9 +98,17 @@ public  class Controller  {
         switch (te){
             case 1 : 
                 manager = dash.openGestioneLetto();
+                /*qui si può fare da gestione letto:
+                crea letto()
+                print lista letti()
+                rimuovi letto()
+                set disp luogo, nome ecc
+                */
                 break;
             case 2 :
                 find = dash.openRicercaLetto(vistadash.search(), new Controller());
+                /* ricerca letto può far scegliere un letto da quelli che vengono visualizzati
+                e passare a messaggi, in teoria*/
         }
           
           
