@@ -100,7 +100,7 @@ public  class Controller  {
                 manager = dash.openGestioneLetto();
                 break;
             case 2 : 
-                find = dash.openRicercaLetto();
+                find = dash.openRicercaLetto(vistadash.search(), new Controller());
         }
           
           

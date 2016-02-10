@@ -15,7 +15,7 @@ public class Dashboard {
         return new GestioneLetto();             //stavo seguendo la struttura del diagramma delle classi
     }
     
-    public RicercaLetto openRicercaLetto(String luogo, String disp, Controller c){
+    public RicercaLetto openRicercaLetto(String luogo, Controller c){
         return new RicercaLetto(luogo,  c);
     }
     public void logout(){
