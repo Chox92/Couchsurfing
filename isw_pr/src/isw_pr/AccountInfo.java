@@ -26,7 +26,7 @@ public class AccountInfo {
     }
     
     public String getPsw(){      //rende password
-        return userId;
+        return psw;
     }
     public void setUsername(String usr){    //imposta username
         userId = usr;
