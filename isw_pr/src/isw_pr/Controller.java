@@ -14,16 +14,31 @@ public  class Controller  {
     
     /**
      * @param args the command line arguments
+     * @throws isw_pr.AssertException
      */
     
-    public static void main(String[] args)
+    public static void main(String[] args) throws AssertException
     {
         String[] usrPassArray = new String[2]; //un po' molto brutto
-        AccountInfo account1 = new AccountInfo("", "");
+        AccountInfo account1 = new AccountInfo("","");
         
         View view = new View();
-        if (view.homePage() == 1){
+        
+        int var_tmp=0; 
+        
+        var_tmp= view.homePage();
+        
+        
+      //  assert (var_tmp==1); funge
+        
+        if  (var_tmp > 2 )
+        {
+            throw new AssertException();
             
+        }
+                                
+        else if (var_tmp == 1){
+    
             CreateNewAccount accountCreator = new CreateNewAccount();
         
             CreateAccountGUI ui_account_create = new CreateAccountGUI();
@@ -33,8 +48,14 @@ public  class Controller  {
             accountCreator.createAccount(usrPassArray[0], usrPassArray[1]);
 
             account1 = accountCreator.getAccount();
-        };
+        }
         
+     
+        
+        
+         
+           
+         
         
         /*
         String var_tmp_read,var_tmp_read2; ///meglio un vettore
