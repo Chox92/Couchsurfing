@@ -5,6 +5,8 @@
  */
 package isw_pr;
 
+import java.util.Scanner;
+
 /**
  *
  * @author gimir_000
@@ -14,8 +16,14 @@ public class GestioneLetto {
    private Letto[] model = new Letto[10];   //array dei letti di un utente
    
 
-   public GestioneLetto(){      //costruttore superfluo
-   }
+   public GestioneLetto(){
+       new GestioneLettoGUI();  //Questo costruttore richiama la GUI di scelta opzioni
+   }      //costruttore superfluo
+   
+   public int sceltaGestioneLetto(){
+        Scanner scelta = new Scanner(System.in);
+        return scelta.nextInt();
+    }
    
    public void creaLetto(String nomeLetto, String loc){     //funzione che istanzia e inizializza un letto, 
        if (n < 9){                                  //verifica che ci sia spazio nell'array

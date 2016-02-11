@@ -24,9 +24,9 @@ public  class Controller  {
         
         View view = new View();
         
-        int var_tmp=0; 
+        int var_tmp = 0; 
         
-        var_tmp= view.homePage();//ripeteva due volte l'imput senza 
+        var_tmp = view.homePage();//ripeteva due volte l'input senza 
         
         
       //  assert (var_tmp==1); funge
@@ -34,9 +34,7 @@ public  class Controller  {
         if  (var_tmp > 2 )
         {
             throw new AssertException();
-            
         }
-                                
         else if (var_tmp == 1){
     
             CreateNewAccount accountCreator = new CreateNewAccount();
@@ -49,13 +47,6 @@ public  class Controller  {
 
             account1 = accountCreator.getAccount();
         }
-        
-     
-        
-        
-         
-           
-         
         
         /*
         String var_tmp_read,var_tmp_read2; ///meglio un vettore
@@ -74,14 +65,11 @@ public  class Controller  {
          var_int= leggi.nextInt();
          System.out.println("hai pigiato:"+var_int);
          */
-       
-       
+        
         /*AccountInfo account1 = new AccountInfo();   //così salti passaggi
         account1.createAccount("Ingegneria", "Software");*/
         
-        
         //System.out.println("user ritorno:"+tmp_di_passaggio[0]+"psw user ritorno:"+tmp_di_passaggio[1]);
-        
         
         LoginGUI lgin_vista =new LoginGUI();
         int var_state_login=0;
@@ -129,10 +117,6 @@ public  class Controller  {
             case 2 :
                 find = dash.openRicercaLetto(vistadash.search(), new Controller());
         }
-          
-        
-          
-          
         //e in teoria così dovrebbe lanciare la dashboard
         
         //fetch student record based on his roll no from the database
