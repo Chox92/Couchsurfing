@@ -14,16 +14,29 @@ public  class Controller  {
     
     /**
      * @param args the command line arguments
+     * @throws isw_pr.AssertException
      */
     
-    public static void main(String[] args)
+    public static void main(String[] args) throws AssertException
     {
         String[] usrPassArray = new String[2]; //un po' molto brutto
-        AccountInfo account1 = new AccountInfo("", "");
+        AccountInfo account1 = new AccountInfo("","");
         
         View view = new View();
-        if (view.homePage() == 1){
-            
+        
+        int var_tmp = 0; 
+        
+        var_tmp = view.homePage();//ripeteva due volte l'input senza 
+        
+        
+      //  assert (var_tmp==1); funge
+        
+        if  (var_tmp > 2 )
+        {
+            throw new AssertException();
+        }
+        else if (var_tmp == 1){
+    
             CreateNewAccount accountCreator = new CreateNewAccount();
         
             CreateAccountGUI ui_account_create = new CreateAccountGUI();
@@ -33,8 +46,7 @@ public  class Controller  {
             accountCreator.createAccount(usrPassArray[0], usrPassArray[1]);
 
             account1 = accountCreator.getAccount();
-        };
-        
+        }
         
         /*
         String var_tmp_read,var_tmp_read2; ///meglio un vettore
@@ -53,15 +65,11 @@ public  class Controller  {
          var_int= leggi.nextInt();
          System.out.println("hai pigiato:"+var_int);
          */
-       
-       
+        
         /*AccountInfo account1 = new AccountInfo();   //così salti passaggi
         account1.createAccount("Ingegneria", "Software");*/
         
-        
         //System.out.println("user ritorno:"+tmp_di_passaggio[0]+"psw user ritorno:"+tmp_di_passaggio[1]);
-
-        
         
         LoginGUI lgin_vista =new LoginGUI();
         int var_state_login=0;
@@ -70,27 +78,19 @@ public  class Controller  {
          
         usrPassArray=lgin_vista.loginGUI("","");
         
-                
-      //  System.out.println("*****DATI DA ACCOUNT USR :"+account1.getUsername().toString()+"*****DATI DA ACCOUNT PSW"+account1.getPsw().toString());
+        //System.out.println("*****DATI DA ACCOUNT USR :"+account1.getUsername().toString()+"*****DATI DA ACCOUNT PSW"+account1.getPsw().toString());
         
-
-     
         //ora ci andrebbe
         Login login = new Login(usrPassArray[0],usrPassArray[1] , account1);
         
+        var_state_login = login.securityMatch();
         
-        
-        var_state_login= login.securityMatch();
-        
-    
-             
-          
         }while (var_state_login<1);
         
         
-          DashboardGUI vistadash = new DashboardGUI();
+        DashboardGUI vistadash = new DashboardGUI();
         
-        int te =vistadash.dashGui();
+        int te = vistadash.dashGui();
         
         Dashboard dash = new Dashboard();
         GestioneLetto manager;
@@ -98,37 +98,52 @@ public  class Controller  {
         switch (te){
             case 1 : 
                 manager = dash.openGestioneLetto();
-                /*qui si può fare da gestione letto:
-                crea letto()
-                print lista letti()
-                rimuovi letto()
-                set disp luogo, nome ecc
-                */
+                int n;
+                do{
+                //Codice per le funzioni di Gestione letto
+                n =vistadash.gestLettoGui();
+                    switch (n){
+                        case 1:
+                            //Non so se vada bene usare sempre "manager", per ora lo uso
+                            String[] temp = vistadash.creaLettoGui();
+                            manager.creaLetto(temp[0], temp[1]);
+                            break;
+
+                        case 2:
+                            manager.printListaLetti();
+                            break;
+
+                        case 3:
+                            int i = vistadash.rimuoviLettoGui();
+                            if (i == 0 )
+                                break;
+                            
+                            manager.rimuoviLetto(i);
+                            break;
+                    }
+                }while(n != 4);
                 break;
             case 2 :
                 find = dash.openRicercaLetto(vistadash.search(), new Controller());
                 /* ricerca letto può far scegliere un letto da quelli che vengono visualizzati
                 e passare a messaggi, in teoria*/
         }
-          
-          
         //e in teoria così dovrebbe lanciare la dashboard
         
         //fetch student record based on his roll no from the database
         Letto model  = prendi_dati_Letto_Dal_Database_finto();/*emula il db*/
 
         //Create a view : to write student details on console
-      
-
+        
         GestioneLetto controller = new GestioneLetto();
         controller.creaLetto("letto1","colombia");
         controller.creaLetto("letto2","colombia");
         controller.creaLetto("letto3","colombia");
-
+        
         controller.printListaLetti();
-
+        
         controller.rimuoviLetto(1);
-
+        
         controller.printListaLetti();
         /*controller.updateView();
 
@@ -138,14 +153,14 @@ public  class Controller  {
         controller.updateView();*/
    }
 
-   private static Letto prendi_dati_Letto_Dal_Database_finto(){
+    private static Letto prendi_dati_Letto_Dal_Database_finto(){
         Letto student = new Letto();
         student.setLetto("un letto");
         student.setDisp_letto("0");
         return student;
     }
    
-   public final Letto[] findLettoDB(String luogo){
+    public final Letto[] findLettoDB(String luogo){
         Letto[] arr = new Letto[7];
         
         for(int i = 0; i < 7; i++){
