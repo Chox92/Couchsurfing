@@ -173,7 +173,7 @@ public  class Controller  {
             arr[i]=new Letto();
             arr[i].setLocation(luogo);
             nome = NameGenerator.generateName();
-            arr[i].setLetto("Da"+ nome +(i+1));
+            arr[i].setLetto("Da "+ nome +(i+1));
             arr[i].setDisp_letto("1");
         }
         return arr;
