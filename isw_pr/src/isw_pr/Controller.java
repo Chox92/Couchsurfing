@@ -167,11 +167,13 @@ public  class Controller  {
    
     public final Letto[] findLettoDB(String luogo){
         Letto[] arr = new Letto[7];
+        String nome;
         
         for(int i = 0; i < 7; i++){
             arr[i]=new Letto();
             arr[i].setLocation(luogo);
-            arr[i].setLetto("Da Pedro"+ (i+1));
+            nome = NameGenerator.generateName();
+            arr[i].setLetto("Da"+ nome +(i+1));
             arr[i].setDisp_letto("1");
         }
         return arr;
