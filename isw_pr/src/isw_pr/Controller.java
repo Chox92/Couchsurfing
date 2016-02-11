@@ -35,7 +35,6 @@ public  class Controller  {
             account1 = accountCreator.getAccount();
         };
         
-        
         /*
         String var_tmp_read,var_tmp_read2; ///meglio un vettore
         int var_int=0;
@@ -60,7 +59,6 @@ public  class Controller  {
         
         
         //System.out.println("user ritorno:"+tmp_di_passaggio[0]+"psw user ritorno:"+tmp_di_passaggio[1]);
-
         
         
         LoginGUI lgin_vista =new LoginGUI();
@@ -70,27 +68,19 @@ public  class Controller  {
          
         usrPassArray=lgin_vista.loginGUI("","");
         
-                
-      //  System.out.println("*****DATI DA ACCOUNT USR :"+account1.getUsername().toString()+"*****DATI DA ACCOUNT PSW"+account1.getPsw().toString());
+        //System.out.println("*****DATI DA ACCOUNT USR :"+account1.getUsername().toString()+"*****DATI DA ACCOUNT PSW"+account1.getPsw().toString());
         
-
-     
         //ora ci andrebbe
         Login login = new Login(usrPassArray[0],usrPassArray[1] , account1);
         
+        var_state_login = login.securityMatch();
         
-        
-        var_state_login= login.securityMatch();
-        
-    
-             
-          
         }while (var_state_login<1);
         
         
-          DashboardGUI vistadash = new DashboardGUI();
+        DashboardGUI vistadash = new DashboardGUI();
         
-        int te =vistadash.dashGui();
+        int te = vistadash.dashGui();
         
         Dashboard dash = new Dashboard();
         GestioneLetto manager;
@@ -98,29 +88,42 @@ public  class Controller  {
         switch (te){
             case 1 : 
                 manager = dash.openGestioneLetto();
+                
+                //Codice per le funzioni di Gestione letto
+                switch (manager.sceltaGestioneLetto()){
+                    case 1:
+                        //Non so se vada bene usare sempre "manager", per ora lo uso
+                        manager.creaLetto("Nome letto", "Luogo");
+                        break;
+                        
+                    case 2:
+                        manager.printListaLetti();
+                        break;
+                        
+                    case 3:
+                        manager.rimuoviLetto(1);
+                }
                 break;
             case 2 :
                 find = dash.openRicercaLetto(vistadash.search(), new Controller());
         }
-          
-          
+        
         //e in teoria così dovrebbe lanciare la dashboard
         
         //fetch student record based on his roll no from the database
         Letto model  = prendi_dati_Letto_Dal_Database_finto();/*emula il db*/
 
         //Create a view : to write student details on console
-      
-
+        
         GestioneLetto controller = new GestioneLetto();
         controller.creaLetto("letto1","colombia");
         controller.creaLetto("letto2","colombia");
         controller.creaLetto("letto3","colombia");
-
+        
         controller.printListaLetti();
-
+        
         controller.rimuoviLetto(1);
-
+        
         controller.printListaLetti();
         /*controller.updateView();
 
@@ -130,14 +133,14 @@ public  class Controller  {
         controller.updateView();*/
    }
 
-   private static Letto prendi_dati_Letto_Dal_Database_finto(){
+    private static Letto prendi_dati_Letto_Dal_Database_finto(){
         Letto student = new Letto();
         student.setLetto("un letto");
         student.setDisp_letto("0");
         return student;
     }
    
-   public final Letto[] findLettoDB(String luogo){
+    public final Letto[] findLettoDB(String luogo){
         Letto[] arr = new Letto[7];
         
         for(int i = 0; i < 7; i++){
