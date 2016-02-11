@@ -26,7 +26,7 @@ public  class Controller  {
         
         int var_tmp=0; 
         
-        var_tmp= view.homePage();
+        var_tmp= view.homePage();//ripeteva due volte l'imput senza 
         
         
       //  assert (var_tmp==1); funge
