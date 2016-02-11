@@ -90,11 +90,13 @@ public  class Controller  {
         
         DashboardGUI vistadash = new DashboardGUI();
         
-        int te = vistadash.dashGui();
+        int te;
         
         Dashboard dash = new Dashboard();
         GestioneLetto manager;
         RicercaLetto find;
+        //do{
+        te = vistadash.dashGui();
         switch (te){
             case 1 : 
                 manager = dash.openGestioneLetto();
@@ -125,17 +127,20 @@ public  class Controller  {
                 break;
             case 2 :
                 find = dash.openRicercaLetto(vistadash.search(), new Controller());
+                find.printListaLetti();
                 /* ricerca letto può far scegliere un letto da quelli che vengono visualizzati
                 e passare a messaggi, in teoria*/
         }
+        //}while(te != 3);
+        
         //e in teoria così dovrebbe lanciare la dashboard
         
         //fetch student record based on his roll no from the database
-        Letto model  = prendi_dati_Letto_Dal_Database_finto();/*emula il db*/
+        //Letto model  = prendi_dati_Letto_Dal_Database_finto();/*emula il db*/
 
         //Create a view : to write student details on console
         
-        GestioneLetto controller = new GestioneLetto();
+        /*GestioneLetto controller = new GestioneLetto();
         controller.creaLetto("letto1","colombia");
         controller.creaLetto("letto2","colombia");
         controller.creaLetto("letto3","colombia");
@@ -144,7 +149,7 @@ public  class Controller  {
         
         controller.rimuoviLetto(1);
         
-        controller.printListaLetti();
+        controller.printListaLetti();*/
         /*controller.updateView();
 
         //update model data
@@ -166,7 +171,7 @@ public  class Controller  {
         for(int i = 0; i < 7; i++){
             arr[i]=new Letto();
             arr[i].setLocation(luogo);
-            arr[i].setLetto("Da Pedro"+ i+1);
+            arr[i].setLetto("Da Pedro"+ (i+1));
             arr[i].setDisp_letto("1");
         }
         return arr;
